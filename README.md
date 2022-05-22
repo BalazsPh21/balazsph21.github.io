@@ -1,2 +1,2 @@
-# balazsph21.github.io
+# balazstuba.hu
 Portfolio Webpage
