@@ -12535,6 +12535,34 @@ main .embedly-card h4, main .embedly-card .h4 {
   font-size: inherit;
 }
 
+main .project {
+  margin-bottom: 2.5rem;
+}
+
+main .project .meta {
+  color: #6c757d;
+  font-size: .75rem;
+  margin-bottom: .5rem;
+}
+
+main .project .ratio, main .project video, main .project .figure {
+  margin-bottom: .75rem;
+}
+
+main .project .ratio, main .project video {
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+main .project video {
+  display: block;
+  width: 100%;
+}
+
+main .publication-title {
+  color: #a51c30;
+}
+
 @media (min-width: 768px) {
   body {
     padding-bottom: 2.5rem;

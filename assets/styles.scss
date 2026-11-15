@@ -109,6 +109,38 @@ main {
     }
 }
 
+// Projects
+main {
+
+    .project {
+        margin-bottom: 2.5rem;
+
+        .meta {
+            color: $text-muted;
+            font-size: .75rem;
+            margin-bottom: .5rem;
+        }
+
+        .ratio, video, .figure {
+            margin-bottom: .75rem;
+        }
+
+        .ratio, video {
+            border-radius: $border-radius;
+            overflow: hidden;
+        }
+
+        video {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .publication-title {
+        color: $link-color;
+    }
+}
+
 // On desktop
 @include media-breakpoint-up(md) {
 
