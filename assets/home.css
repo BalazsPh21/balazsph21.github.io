@@ -1,0 +1,319 @@
+:root {
+    --home-bg: #090b0f;
+    --home-panel: #11141a;
+    --home-line: #232936;
+    --home-text: #e9ecf1;
+    --home-muted: #97a1b2;
+    --home-accent: #4d8dff;
+    --home-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+body.home {
+    --bs-link-color: var(--home-accent);
+    --bs-link-hover-color: var(--home-accent);
+    background: var(--home-bg);
+    color: var(--home-text);
+    padding: 0;
+}
+
+/* Faint engineering grid that fades out down the page */
+body.home::before {
+    background-image:
+        linear-gradient(var(--home-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--home-line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    content: "";
+    inset: 0;
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 75%);
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 75%);
+    opacity: .5;
+    pointer-events: none;
+    position: fixed;
+    z-index: 0;
+}
+
+.home .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Top bar */
+.home-bar {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.5rem;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+}
+
+.home-bar .brand {
+    color: var(--home-text);
+    font-weight: bold;
+}
+
+.home-bar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem 1.25rem;
+}
+
+.home-bar nav a {
+    color: var(--home-muted);
+    font-family: var(--home-mono);
+    font-size: .7rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.home-bar nav a:hover {
+    color: var(--home-text);
+    text-decoration: none;
+}
+
+/* Hero */
+.hero {
+    padding: 3rem 0 2.5rem;
+}
+
+.kicker {
+    color: var(--home-accent);
+    font-family: var(--home-mono);
+    font-size: .7rem;
+    letter-spacing: .08em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(1.9rem, 5.4vw, 3.1rem);
+    font-weight: bold;
+    letter-spacing: -.02em;
+    line-height: 1.05;
+    margin-bottom: 1.25rem;
+}
+
+.hero h1 em {
+    color: var(--home-accent);
+    font-style: normal;
+}
+
+.hero .lead {
+    color: var(--home-muted);
+    font-size: 1.05rem;
+    font-weight: 400;
+    max-width: 34em;
+}
+
+.hero .lead a {
+    color: var(--home-text);
+    text-decoration: underline;
+    text-decoration-color: var(--home-line);
+    text-underline-offset: 3px;
+}
+
+.hero-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem 1rem;
+    margin-top: 1.75rem;
+}
+
+.btn-home {
+    border: 1px solid var(--home-line);
+    border-radius: .3rem;
+    color: var(--home-text);
+    display: inline-block;
+    font-family: var(--home-mono);
+    font-size: .75rem;
+    padding: .55rem 1rem;
+}
+
+.btn-home:hover {
+    border-color: var(--home-accent);
+    color: var(--home-text);
+    text-decoration: none;
+}
+
+.btn-home.primary {
+    background: var(--home-accent);
+    border-color: var(--home-accent);
+    color: #05070a;
+    font-weight: bold;
+}
+
+.hero-icons {
+    display: flex;
+    gap: .9rem;
+    margin-left: .25rem;
+}
+
+.hero-icons a {
+    color: var(--home-muted);
+    font-size: 1.05rem;
+}
+
+.hero-icons a:hover {
+    color: var(--home-text);
+}
+
+.hero-icons svg {
+    fill: currentColor;
+    height: 1em;
+    vertical-align: -.125em;
+    width: 1em;
+}
+
+/* Photo banner */
+.banner {
+    aspect-ratio: 21 / 9;
+    border: 1px solid var(--home-line);
+    border-radius: .4rem;
+    margin: 0 0 3.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 62%;
+    width: 100%;
+}
+
+.banner figcaption {
+    background: linear-gradient(transparent, rgba(5, 7, 10, .85));
+    bottom: 0;
+    color: var(--home-text);
+    font-family: var(--home-mono);
+    font-size: .6rem;
+    left: 0;
+    letter-spacing: .06em;
+    padding: 2rem .9rem .7rem;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+}
+
+/* Project cards */
+.section-label {
+    border-bottom: 1px solid var(--home-line);
+    color: var(--home-muted);
+    font-family: var(--home-mono);
+    font-size: .7rem;
+    letter-spacing: .08em;
+    margin-bottom: 1.25rem;
+    padding-bottom: .6rem;
+    text-transform: uppercase;
+}
+
+.cards {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 3.5rem;
+}
+
+.card-home {
+    background: var(--home-panel);
+    border: 1px solid var(--home-line);
+    border-radius: .4rem;
+    color: var(--home-text);
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    transition: border-color .15s, transform .15s;
+}
+
+.card-home:hover {
+    border-color: var(--home-accent);
+    color: var(--home-text);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.card-home .num {
+    color: var(--home-accent);
+    font-family: var(--home-mono);
+    font-size: .65rem;
+    margin-bottom: .75rem;
+}
+
+.card-home h2 {
+    font-size: 1.05rem;
+    font-weight: bold;
+    line-height: 1.25;
+    margin-bottom: .5rem;
+}
+
+.card-home p {
+    color: var(--home-muted);
+    font-size: .8rem;
+    margin-bottom: 1rem;
+}
+
+.card-home .tags {
+    color: var(--home-muted);
+    font-family: var(--home-mono);
+    font-size: .58rem;
+    letter-spacing: .04em;
+    margin-top: auto;
+    text-transform: uppercase;
+}
+
+/* Optional thumbnail: <img class="thumb" ...> as the first child of a card */
+.card-home .thumb {
+    aspect-ratio: 16 / 9;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Footer */
+.home-foot {
+    border-top: 1px solid var(--home-line);
+    color: var(--home-muted);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--home-mono);
+    font-size: .65rem;
+    gap: .5rem 1.5rem;
+    justify-content: space-between;
+    padding: 1.25rem 0 2rem;
+}
+
+.home-foot a {
+    color: var(--home-muted);
+}
+
+.home-foot a:hover {
+    color: var(--home-text);
+}
+
+@media (max-width: 767.98px) {
+    .hero {
+        padding: 1.5rem 0 2rem;
+    }
+
+    .banner {
+        aspect-ratio: 16 / 10;
+        margin-bottom: 2.5rem;
+    }
+
+    .cards {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-home {
+        transition: none;
+    }
+
+    .card-home:hover {
+        transform: none;
+    }
+}

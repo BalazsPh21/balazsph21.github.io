@@ -8,7 +8,7 @@
         <meta name="viewport" content="initial-scale=1, width=device-width">
         <meta name="description" content="Balázs Tuba is an MSc student in Robotics, Systems and Control at ETH Zürich.">
         <meta property="og:description" content="Balázs Tuba is an MSc student in Robotics, Systems and Control at ETH Zürich.">
-        <meta property="og:image" content="/tuba.jpg">
+        <meta property="og:image" content="/assets/media/formula-student-car.jpg">
         <meta property="og:title" content="Projects - Balázs Tuba">
 
         <link href="/icon.png" rel="icon">
@@ -102,11 +102,14 @@
                         <p class="meta">Real-World Robotics, ETH Zürich &middot; Sep 2026 - present</p>
                         <!-- media: orca-hand -->
                         <p>The project has two parts. First, we taught an ORCAv2 hand, driven by Feetech servo motors, to rotate a cube in its fingers. Then we designed and built a second hand around stronger and faster quasi-direct-drive (QDD) finger actuators to push manipulation speed as far as we could.</p>
-                        <ul class="small">
-                            <li><strong>In-hand cube rotation:</strong> trained the policy with massively parallel reinforcement learning in Isaac Lab and PyTorch, then transferred it from simulation to the physical hand, where it reaches 30 rotations per minute on average.</li>
-                            <li><strong>High-speed hand:</strong> redesigned the hand mechanically and electrically for the QDD actuators. I developed the C++ CAN FD driver and ROS 2 interface for them, including joint-to-motor mapping, telemetry handling and a 600 Hz control loop.</li>
-                            <li>The new hand clicks a computer mouse more than 2,000 times per minute and fastens a nut onto a screw at a very high speed.</li>
-                        </ul>
+                        <details class="small">
+                            <summary>Details</summary>
+                            <ul class="mt-2">
+                                <li><strong>In-hand cube rotation:</strong> trained the policy with massively parallel reinforcement learning in Isaac Lab and PyTorch, then transferred it from simulation to the physical hand, where it reaches 30 rotations per minute on average.</li>
+                                <li><strong>High-speed hand:</strong> redesigned the hand mechanically and electrically for the QDD actuators. I developed the C++ CAN FD driver and ROS 2 interface for them, including joint-to-motor mapping, telemetry handling and a 600 Hz control loop.</li>
+                                <li>The new hand clicks a computer mouse more than 2,000 times per minute and fastens a nut onto a screw at a very high speed.</li>
+                            </ul>
+                        </details>
                     </section>
 
                     <section class="project" id="event-relocalization">
@@ -114,12 +117,15 @@
                         <p class="meta">Vision Algorithms for Mobile Robotics, ETH Zürich &middot; team of four &middot; Nov 2026 - present</p>
                         <!-- media: event-relocalization -->
                         <p>Standard cameras struggle in the dark, under glare and during fast motion, while event cameras keep working there. We build a 3D map from RGB recordings made in ideal conditions, and then localize an event camera within that map when conditions are far from ideal, for example in the dark.</p>
-                        <ul class="small">
-                            <li><strong>Map:</strong> a Structure-from-Motion reconstruction built with COLMAP from the RGB frames of the EDS dataset, which provides frames, events and ground-truth poses from the same viewpoint.</li>
-                            <li><strong>Baseline:</strong> reconstruct intensity images from short event windows with E2VID, then run a standard image-localization pipeline: global retrieval, local feature matching, and PnP with RANSAC.</li>
-                            <li><strong>Direct event-to-image matching:</strong> match events against the map images directly with the EI-Nexus event-image matcher, skipping the image reconstruction step, and fine-tune the matcher for this setting.</li>
-                            <li><strong>Evaluation:</strong> compare the two approaches by localization success rate and pose error, and study how event-window length, event representation, motion speed and illumination affect them.</li>
-                        </ul>
+                        <details class="small">
+                            <summary>Details</summary>
+                            <ul class="mt-2">
+                                <li><strong>Map:</strong> a Structure-from-Motion reconstruction built with COLMAP from the RGB frames of the EDS dataset, which provides frames, events and ground-truth poses from the same viewpoint.</li>
+                                <li><strong>Baseline:</strong> reconstruct intensity images from short event windows with E2VID, then run a standard image-localization pipeline: global retrieval, local feature matching, and PnP with RANSAC.</li>
+                                <li><strong>Direct event-to-image matching:</strong> match events against the map images directly with the EI-Nexus event-image matcher, skipping the image reconstruction step, and fine-tune the matcher for this setting.</li>
+                                <li><strong>Evaluation:</strong> compare the two approaches by localization success rate and pose error, and study how event-window length, event representation, motion speed and illumination affect them.</li>
+                            </ul>
+                        </details>
                     </section>
 
                     <section class="project" id="road-slope">
@@ -127,11 +133,14 @@
                         <p class="meta">HUN-REN SZTAKI, Vehicle Dynamics and Control Research Group &middot; Oct 2025 - Oct 2026</p>
                         <!-- media: road-slope -->
                         <p>A multi-sensor fusion method that maps road slope from the sensors a vehicle already has, without needing any vehicle parameters.</p>
-                        <ul class="small">
-                            <li>Combines an Extended Kalman Filter on IMU, velocity and wheel-speed data with Bayesian fusion of repeated traversals of the same road.</li>
-                            <li>Adaptive covariance weighting rejects suspension-induced pitch motion.</li>
-                            <li>Validated over 68 km of public roads against ground truth: 0.13&deg; RMSE, maximum error below 1&deg;.</li>
-                        </ul>
+                        <details class="small">
+                            <summary>Details</summary>
+                            <ul class="mt-2">
+                                <li>Combines an Extended Kalman Filter on IMU, velocity and wheel-speed data with Bayesian fusion of repeated traversals of the same road.</li>
+                                <li>Adaptive covariance weighting rejects suspension-induced pitch motion.</li>
+                                <li>Validated over 68 km of public roads against ground truth: 0.13&deg; RMSE, maximum error below 1&deg;.</li>
+                            </ul>
+                        </details>
                     </section>
 
                     <section class="project" id="formula-student">
@@ -143,15 +152,18 @@
                             <figcaption class="figure-caption text-end">BME Formula Racing Team</figcaption>
                         </figure>
                         <p>Our software stack, written in C++ on ROS 2, is split into state estimation, perception, planning and control. I joined the team as an autonomous control engineer and later led the Autonomous Systems and Control group responsible for the whole stack, while remaining one of its main developers.</p>
-                        <ul class="small">
-                            <li><strong>Path tracking on the car:</strong> a lateral controller that blends the Stanley and Pure Pursuit steering laws depending on the upcoming curvature, giving faster simulated laps than either alone.</li>
-                            <li><strong>Model predictive control:</strong> three nonlinear MPC variants (reference tracking, contouring and curvilinear) with FORCESPRO. In simulation they cut the RMS lateral error from 0.62 m to 0.19 m against the Pure Pursuit baseline, at solve times around 3 ms.</li>
-                            <li><strong>State estimation:</strong> a 100 Hz Extended Kalman Filter on a kinematic point-mass model, built in Simulink, fusing LiDAR odometry, GPS and IMU data.</li>
-                            <li><strong>SLAM:</strong> deployed FAST-LIO2-based LiDAR-inertial SLAM on the car, first coping with a sparse and unreliable 16-beam LiDAR, then keeping it real-time with the much denser point clouds of a Seyond LiDAR.</li>
-                            <li><strong>Perception:</strong> proposed and led the development of the LiDAR-camera fusion.</li>
-                            <li><strong>Infrastructure:</strong> led the migration from ROS 1 to ROS 2 and introduced a Docker development environment adopted across the team.</li>
-                            <li><strong>Result:</strong> 5th place in Autocross and in Trackdrive at Formula Student East 2024.</li>
-                        </ul>
+                        <details class="small">
+                            <summary>Details</summary>
+                            <ul class="mt-2">
+                                <li><strong>Path tracking on the car:</strong> a lateral controller that blends the Stanley and Pure Pursuit steering laws depending on the upcoming curvature, giving faster simulated laps than either alone.</li>
+                                <li><strong>Model predictive control:</strong> three nonlinear MPC variants (reference tracking, contouring and curvilinear) with FORCESPRO. In simulation they cut the RMS lateral error from 0.62 m to 0.19 m against the Pure Pursuit baseline, at solve times around 3 ms.</li>
+                                <li><strong>State estimation:</strong> a 100 Hz Extended Kalman Filter on a kinematic point-mass model, built in Simulink, fusing LiDAR odometry, GPS and IMU data.</li>
+                                <li><strong>SLAM:</strong> deployed FAST-LIO2-based LiDAR-inertial SLAM on the car, first coping with a sparse and unreliable 16-beam LiDAR, then keeping it real-time with the much denser point clouds of a Seyond LiDAR.</li>
+                                <li><strong>Perception:</strong> proposed and led the development of the LiDAR-camera fusion.</li>
+                                <li><strong>Infrastructure:</strong> led the migration from ROS 1 to ROS 2 and introduced a Docker development environment adopted across the team.</li>
+                                <li><strong>Result:</strong> 5th place in Autocross and in Trackdrive at Formula Student East 2024.</li>
+                            </ul>
+                        </details>
                     </section>
 
                 </main>

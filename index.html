@@ -8,17 +8,17 @@
         <meta name="viewport" content="initial-scale=1, width=device-width">
         <meta name="description" content="Balázs Tuba is an MSc student in Robotics, Systems and Control at ETH Zürich.">
         <meta property="og:description" content="Balázs Tuba is an MSc student in Robotics, Systems and Control at ETH Zürich.">
-        <meta property="og:image" content="/tuba.jpg">
+        <meta property="og:image" content="/assets/media/formula-student-car.jpg">
         <meta property="og:title" content="Balázs Tuba">
 
         <link href="/icon.png" rel="icon">
 
-        <!-- https://fonts.google.com/specimen/Roboto -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&display=swap" rel="stylesheet">
+        <!-- https://fonts.google.com/specimen/Roboto, https://fonts.google.com/specimen/JetBrains+Mono -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,700|JetBrains+Mono:400,700&display=swap" rel="stylesheet">
 
         <!-- https://getbootstrap.com/ -->
         <link href="/assets/styles.css" rel="stylesheet">
-        <script src="/assets/bootstrap.bundle.min.js"></script>
+        <link href="/assets/home.css" rel="stylesheet">
 
         <!-- https://fontawesome.com/icons -->
         <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" rel="stylesheet">
@@ -27,67 +27,84 @@
 
     </head>
 
-    <body>
+    <body class="home">
 
         <div class="container">
 
-            <div class="row">
-                <aside class="col-md-5">
-                    <h2 class="mb-1">
-                        <a class="text-muted" href="/">home page</a>
-                        <span class="text-muted">of</span>
-                    </h2>
-                    <h1 class="mb-1"><a href="/">Balázs Tuba</a></h1>
-                    <h2 class="mb-1 ps-md-5">Robotics, Systems and Control Master's Student</h2>
-                    <h3 class="mb-4"><a href="https://ethz.ch/en.html">ETH Zürich</a></h3>
-                    <h3 class="mb-0"><a href="mailto:balazsph@outlook.hu">balazsph@outlook.hu</a></h3>
-                    <p class="mb-2">
-                        <a aria-label="GitHub" class="text-dark" href="https://github.com/BalazsPh21"><i class="fab fa-github"></i></a>
-                        <a aria-label="LinkedIn" class="text-dark" href="https://www.linkedin.com/in/balazstuba/"><i class="fab fa-linkedin"></i></a>
-                        <a aria-label="Google Scholar" class="text-dark" href="https://scholar.google.hu/citations?user=1i9Al_cAAAAJ&hl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 20px; height: 18px;"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></a>
-                    </p>
-                    <nav class="d-block mb-4 p-0 navbar navbar-expand-md navbar-light">
-                        <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="collapsed mt-3 navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbar">
-                            <ul class="flex-column ms-md-auto mt-3 nav">
+            <header class="home-bar">
+                <a class="brand" href="/">Balázs Tuba</a>
+                <nav aria-label="Main">
+                    <a href="/bio/">Bio</a>
+                    <a href="/cv/">CV</a>
+                    <a href="/projects/">Projects</a>
+                    <a href="/publications/">Publications</a>
+                    <a href="/contact/">Contact</a>
+                </nav>
+            </header>
 
-                                <li class="nav-item">
-                                    <a class="d-inline-block nav-link p-0" href="/bio/">Bio</a>
-                                </li>
+            <main>
 
-                                <li class="nav-item">
-                                    <a class="d-inline-block nav-link p-0" href="/cv/">CV</a>
-                                </li>
+                <section class="hero">
+                    <p class="kicker">Robotics, Systems and Control &middot; ETH Zürich</p>
+                    <h1>I make robots <em>drive</em>, <em>grasp</em> and <em>see</em>.</h1>
+                    <p class="lead">I am a Master's student at <a href="https://ethz.ch/en.html">ETH Zürich</a> working on control and learning, perception, and state estimation for robots. Before ETH, I led the driverless group of the <a href="https://frtbme.hu/">BME Formula Racing Team</a>.</p>
+                    <div class="hero-actions">
+                        <a class="btn-home primary" href="/projects/">Projects</a>
+                        <a class="btn-home" href="/cv/">CV</a>
+                        <span class="hero-icons">
+                            <a aria-label="GitHub" href="https://github.com/BalazsPh21"><i class="fab fa-github"></i></a>
+                            <a aria-label="LinkedIn" href="https://www.linkedin.com/in/balazstuba/"><i class="fab fa-linkedin"></i></a>
+                            <a aria-label="Google Scholar" href="https://scholar.google.hu/citations?user=1i9Al_cAAAAJ&hl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></a>
+                        </span>
+                    </div>
+                </section>
 
-                                <li class="nav-item">
-                                    <a class="d-inline-block nav-link p-0" href="/projects/">Projects</a>
-                                </li>
+                <!-- Banner: swap the image (or replace the <img> with a muted, looping <video>) when better media is ready -->
+                <figure class="banner">
+                    <img alt="The BME Formula Racing Team driverless race car driving between cones on a test track" src="/assets/media/formula-student-car.jpg">
+                    <figcaption>Formula Student East 2024 &middot; BME Formula Racing Team</figcaption>
+                </figure>
 
-                                <li class="nav-item">
-                                    <a class="d-inline-block nav-link p-0" href="/publications/">Publications</a>
-                                </li>
+                <h2 class="section-label">Projects</h2>
 
-                                <li class="nav-item">
-                                    <a class="d-inline-block nav-link p-0" href="/contact/">Contact</a>
-                                </li>
+                <div class="cards">
 
-                            </ul>
-                        </div>
-                    </nav>
-                </aside>
-                <main class="col-md-7">
+                <a class="card-home" href="/projects/#orca-hand">
+                    <div class="num">01</div>
+                    <h2>High-Speed Dexterous Manipulation with the ORCAv2 Robot Hand</h2>
+                    <p>Reinforcement learning from simulation to a real robot hand, and a faster hand we built ourselves.</p>
+                    <div class="tags">Reinforcement learning &middot; Sim-to-real &middot; CAN FD</div>
+                </a>
 
-                    <figure class="figure">
-                        <a href="/tuba.jpg"><img alt="Balázs Tuba" class="figure-img img-fluid rounded" src="/tuba.jpg"></a>
-                        <figcaption class="figure-caption text-end">
-                            Vince Borka
-                        </figcaption>
-                    </figure>
+                <a class="card-home" href="/projects/#event-relocalization">
+                    <div class="num">02</div>
+                    <h2>Relocalizing an Event Camera in a Map Built from Ordinary Images</h2>
+                    <p>Map a place with a normal camera in good light, then find your way in it in the dark.</p>
+                    <div class="tags">Computer vision &middot; Structure-from-Motion &middot; Event cameras</div>
+                </a>
 
-                </main>
-            </div>
+                <a class="card-home" href="/projects/#road-slope">
+                    <div class="num">03</div>
+                    <h2>Scalable Road Slope Mapping</h2>
+                    <p>Sensor fusion that maps road slope from the sensors a vehicle already has.</p>
+                    <div class="tags">Sensor fusion &middot; Kalman filtering &middot; Mapping</div>
+                </a>
+
+                <a class="card-home" href="/projects/#formula-student">
+                    <div class="num">04</div>
+                    <h2>Formula Student Driverless Race Car</h2>
+                    <p>Control, state estimation, SLAM and perception for a self-driving race car.</p>
+                    <div class="tags">MPC &middot; State estimation &middot; LiDAR SLAM</div>
+                </a>
+
+                </div>
+
+            </main>
+
+            <footer class="home-foot">
+                <span>Zürich, Switzerland</span>
+                <a href="mailto:balazsph@outlook.hu">balazsph@outlook.hu</a>
+            </footer>
 
         </div>
 

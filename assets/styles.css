@@ -68,8 +68,8 @@
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
   --bs-heading-color: ;
-  --bs-link-color: #a51c30;
-  --bs-link-hover-color: #a51c30;
+  --bs-link-color: #0b5cff;
+  --bs-link-hover-color: #0b5cff;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -12524,7 +12524,7 @@ main img {
 }
 
 main summary {
-  color: #a51c30;
+  color: #0b5cff;
 }
 
 main .embedly-card {
@@ -12560,7 +12560,7 @@ main .project video {
 }
 
 main .publication-title {
-  color: #a51c30;
+  color: #0b5cff;
 }
 
 @media (min-width: 768px) {
