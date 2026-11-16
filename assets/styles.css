@@ -11093,6 +11093,24 @@ body {
   font-family: Roboto;
 }
 
+body::before {
+  background-image: linear-gradient(#232936 1px, transparent 1px), linear-gradient(90deg, #232936 1px, transparent 1px);
+  background-size: 48px 48px;
+  content: "";
+  inset: 0;
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 75%);
+  opacity: .5;
+  pointer-events: none;
+  position: fixed;
+  z-index: 0;
+}
+
+body > .container {
+  position: relative;
+  z-index: 1;
+}
+
 a, a.nav-link {
   text-decoration: none;
 }

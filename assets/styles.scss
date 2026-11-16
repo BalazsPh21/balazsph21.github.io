@@ -39,6 +39,28 @@ body {
     font-family: Roboto;
 }
 
+// Faint engineering grid that fades out down the page (shared with the landing page)
+body::before {
+    background-image:
+        linear-gradient($border-color 1px, transparent 1px),
+        linear-gradient(90deg, $border-color 1px, transparent 1px);
+    background-size: 48px 48px;
+    content: "";
+    inset: 0;
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 75%);
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 75%);
+    opacity: .5;
+    pointer-events: none;
+    position: fixed;
+    z-index: 0;
+}
+
+// Keep page content above the grid
+body > .container {
+    position: relative;
+    z-index: 1;
+}
+
 a, a.nav-link {
     text-decoration: none;
 }
