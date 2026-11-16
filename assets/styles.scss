@@ -6,8 +6,15 @@ $container-max-widths: (
   xl: 1140px
 );
 
-// Electric blue
-$link-color: #0b5cff;
+// Dark theme, same palette as the landing page (assets/home.css)
+$body-bg: #090b0f;
+$body-color: #e9ecf1;
+$text-muted: #97a1b2;
+$border-color: #232936;
+$figure-caption-color: $text-muted;
+
+// Electric blue, lightened to read well on the dark background
+$link-color: #4d8dff;
 $link-hover-color: $link-color;
 
 @import "bootstrap/scss/bootstrap";
@@ -24,6 +31,7 @@ $link-hover-color: $link-color;
 }
 
 html {
+    color-scheme: dark;
     font-size: 21px;
 }
 
@@ -59,11 +67,16 @@ aside {
         text-decoration: underline;
     }
 
-    .navbar-light {
+    .navbar-dark {
         .navbar-toggler:not(.collapsed) {
-            background-color: $dark;
-            color: $light;
+            background-color: $body-color;
+            color: $body-bg;
         }
+    }
+
+    // Inline SVG icons (Google Scholar) follow the link color like the Font Awesome ones
+    svg {
+        fill: currentColor;
     }
 }
 

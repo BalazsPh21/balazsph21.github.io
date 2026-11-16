@@ -9,6 +9,7 @@
 }
 
 body.home {
+    color-scheme: dark;
     --bs-link-color: var(--home-accent);
     --bs-link-hover-color: var(--home-accent);
     background: var(--home-bg);
@@ -165,36 +166,142 @@ body.home::before {
     width: 1em;
 }
 
-/* Photo banner */
-.banner {
-    aspect-ratio: 21 / 9;
-    border: 1px solid var(--home-line);
-    border-radius: .4rem;
+/* Project media carousel */
+.showcase {
     margin: 0 0 3.5rem;
-    overflow: hidden;
-    position: relative;
 }
 
-.banner img {
+.showcase-track {
+    border: 1px solid var(--home-line);
+    border-radius: .4rem;
+    display: flex;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.showcase-track::-webkit-scrollbar {
+    display: none;
+}
+
+.showcase-track:focus-visible {
+    outline: 2px solid var(--home-accent);
+    outline-offset: 2px;
+}
+
+.slide {
+    flex: 0 0 100%;
+    margin: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* 16:9 so the videos (and the text burned into them) are never cropped */
+.slide-media {
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+.slide-media img,
+.slide-media video {
     display: block;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 62%;
     width: 100%;
 }
 
-.banner figcaption {
-    background: linear-gradient(transparent, rgba(5, 7, 10, .85));
-    bottom: 0;
-    color: var(--home-text);
+.slide figcaption {
+    background: var(--home-panel);
+    border-top: 1px solid var(--home-line);
     font-family: var(--home-mono);
     font-size: .6rem;
-    left: 0;
     letter-spacing: .06em;
-    padding: 2rem .9rem .7rem;
-    position: absolute;
-    right: 0;
     text-transform: uppercase;
+}
+
+.slide figcaption a {
+    color: var(--home-text);
+    display: block;
+    padding: .7rem .9rem;
+}
+
+.slide figcaption a:hover {
+    color: var(--home-accent);
+    text-decoration: none;
+}
+
+.slide figcaption .num {
+    color: var(--home-accent);
+    margin-right: .75rem;
+}
+
+.showcase-controls {
+    align-items: center;
+    display: flex;
+    gap: .5rem;
+    justify-content: flex-end;
+    margin-top: .6rem;
+}
+
+.showcase-controls[hidden] {
+    display: none;
+}
+
+.showcase-btn {
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--home-line);
+    border-radius: .3rem;
+    color: var(--home-muted);
+    display: inline-flex;
+    font-size: .65rem;
+    height: 1.9rem;
+    justify-content: center;
+    padding: 0;
+    width: 1.9rem;
+}
+
+.showcase-btn:hover {
+    border-color: var(--home-accent);
+    color: var(--home-text);
+}
+
+.showcase-dots {
+    display: flex;
+    gap: .15rem;
+    margin: 0 .25rem;
+}
+
+/* The visible bar is small; the button around it is a comfortable tap target */
+.showcase-dot {
+    background: transparent;
+    border: 0;
+    height: 1.9rem;
+    padding: 0 .2rem;
+}
+
+.showcase-dot::before {
+    background: var(--home-line);
+    border-radius: 2px;
+    content: "";
+    display: block;
+    height: 4px;
+    transition: background-color .2s, width .2s;
+    width: 1rem;
+}
+
+.showcase-dot[aria-current="true"]::before {
+    background: var(--home-accent);
+    width: 1.75rem;
+}
+
+.showcase-dot:hover::before {
+    background: var(--home-muted);
+}
+
+.showcase-dot[aria-current="true"]:hover::before {
+    background: var(--home-accent);
 }
 
 /* Project cards */
@@ -298,8 +405,7 @@ body.home::before {
         padding: 1.5rem 0 2rem;
     }
 
-    .banner {
-        aspect-ratio: 16 / 10;
+    .showcase {
         margin-bottom: 2.5rem;
     }
 
@@ -315,5 +421,9 @@ body.home::before {
 
     .card-home:hover {
         transform: none;
+    }
+
+    .showcase-dot::before {
+        transition: none;
     }
 }

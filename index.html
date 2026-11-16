@@ -17,8 +17,8 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,700|JetBrains+Mono:400,700&display=swap" rel="stylesheet">
 
         <!-- https://getbootstrap.com/ -->
-        <link href="/assets/styles.css" rel="stylesheet">
-        <link href="/assets/home.css" rel="stylesheet">
+        <link href="/assets/styles.css?v=20261116" rel="stylesheet">
+        <link href="/assets/home.css?v=20261116" rel="stylesheet">
 
         <!-- https://fontawesome.com/icons -->
         <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" rel="stylesheet">
@@ -59,11 +59,36 @@
                     </div>
                 </section>
 
-                <!-- Banner: swap the image (or replace the <img> with a muted, looping <video>) when better media is ready -->
-                <figure class="banner">
-                    <img alt="The BME Formula Racing Team driverless race car driving between cones on a test track" src="/assets/media/formula-student-car.jpg">
-                    <figcaption>Formula Student East 2024 &middot; BME Formula Racing Team</figcaption>
-                </figure>
+                <!--
+                    Project media carousel. To add a slide, copy a <figure class="slide"> into the track.
+                    Every slide (photo or video) stays on screen for 6 seconds; videos loop and resume where they left off.
+                    Videos: muted, playsinline, preload="metadata" and a poster image (no autoplay/controls; the script handles playback).
+                -->
+                <section aria-label="Project media" aria-roledescription="carousel" class="showcase">
+                    <div class="showcase-track" tabindex="0">
+
+                        <figure aria-roledescription="slide" class="slide">
+                            <div class="slide-media">
+                                <video aria-label="Thousands of simulated ORCAv2 hands learning to spin a cube in Isaac Lab, then the trained policy rotating a real cube on the physical hand" muted playsinline poster="/assets/media/orca-cube-rotation-poster.jpg" preload="metadata" src="/assets/media/orca-cube-rotation.mp4"></video>
+                            </div>
+                            <figcaption><a href="/projects/#orca-hand"><span class="num">01</span>In-hand cube rotation, from simulation to the ORCAv2 hand</a></figcaption>
+                        </figure>
+
+                        <figure aria-roledescription="slide" class="slide">
+                            <div class="slide-media">
+                                <img alt="The BME Formula Racing Team driverless race car driving between cones on a test track" src="/assets/media/formula-student-car.jpg" style="object-position: 50% 62%;">
+                            </div>
+                            <figcaption><a href="/projects/#formula-student"><span class="num">04</span>Formula Student East 2024 &middot; BME Formula Racing Team</a></figcaption>
+                        </figure>
+
+                    </div>
+                    <div class="showcase-controls" hidden>
+                        <button aria-label="Previous slide" class="showcase-btn" data-action="prev" type="button"><i aria-hidden="true" class="fas fa-chevron-left"></i></button>
+                        <div class="showcase-dots"></div>
+                        <button aria-label="Next slide" class="showcase-btn" data-action="next" type="button"><i aria-hidden="true" class="fas fa-chevron-right"></i></button>
+                        <button aria-label="Pause slideshow" class="showcase-btn" data-action="toggle" type="button"><i aria-hidden="true" class="fas fa-pause"></i></button>
+                    </div>
+                </section>
 
                 <h2 class="section-label">Projects</h2>
 
@@ -107,6 +132,8 @@
             </footer>
 
         </div>
+
+        <script src="/assets/home.js?v=20261116"></script>
 
     </body>
 
