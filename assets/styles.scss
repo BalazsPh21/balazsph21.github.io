@@ -39,23 +39,26 @@ body {
     font-family: Roboto;
 }
 
-// Faint engineering grid that fades out down the page (shared with the landing page)
-body::before {
-    background-image:
-        linear-gradient($border-color 1px, transparent 1px),
-        linear-gradient(90deg, $border-color 1px, transparent 1px);
-    background-size: 48px 48px;
-    content: "";
+// Background drawn by assets/background.js: cost-landscape contours with optimizer
+// trajectories, fading out down the page (shared with the landing page)
+.bg-field {
     inset: 0;
-    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 75%);
-    mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 75%);
-    opacity: .5;
+    -webkit-mask-image: radial-gradient(ellipse 110% 85% at 50% 0%, #000 35%, transparent 95%);
+    mask-image: radial-gradient(ellipse 110% 85% at 50% 0%, #000 35%, transparent 95%);
     pointer-events: none;
     position: fixed;
     z-index: 0;
+
+    canvas {
+        display: block;
+        height: 100%;
+        inset: 0;
+        position: absolute;
+        width: 100%;
+    }
 }
 
-// Keep page content above the grid
+// Keep page content above the background
 body > .container {
     position: relative;
     z-index: 1;
